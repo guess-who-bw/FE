@@ -5,7 +5,7 @@ import Tweet from './Tweet';
 const Game = () => {
     return (
         <div>
-            <h1>Game component!!!</h1>
+            <h1>Game component!</h1>
             <Tweet/>
             <PresCandidates/>
         </div>
