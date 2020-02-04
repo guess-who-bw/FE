@@ -7,8 +7,9 @@ const Tweets = props => {
         axiosWithAuth()
         .get('/api/tweets')
         .then(res => {
-            console.log('res from Tweet.js', res.data.rounds[0].tweet.text)
             setTweet(res.data.rounds[0].tweet.text);
+            console.log('res from Tweet.js', res.data.rounds[0].tweet.text)
+            console.log('Tweet in tweet', tweet)
             console.log(res);
         })
         .catch(err => {
@@ -20,7 +21,6 @@ const Tweets = props => {
 
     return (
         <>
-        <h1>Tweets.js</h1>
         {tweet}
         </>
     );

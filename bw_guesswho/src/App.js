@@ -12,19 +12,6 @@ import HomePage from './components/home-page/HomePage';
 import Game from './components/home-page/game/Game';
 
 function App() {
-	// const [tweet, setTweet] = useState();    
-    // useEffect(() => {
-    //     axiosWithAuth()
-    //     .get('/api/tweets')
-    //     .then(res => {
-    //         console.log('res from App', res)
-    //         setTweet(res.data.rounds[0]);
-    //     })
-    //     .catch(err => {
-    //         console.log(err)       
-    //     })
-    // }, [])
-	// console.log('tweet from App', tweet);
 	
 	return (
 		<AppDiv className="App">

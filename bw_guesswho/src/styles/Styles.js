@@ -198,3 +198,10 @@ export const StyledButton2 = styled.button`
 		color: white;
 	}
 `
+//Game Styles
+export const Choice = styled.p`
+	color: white;
+	&:hover {
+		color: grey;
+	}
+`

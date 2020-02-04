@@ -14,9 +14,10 @@ const Game = props => {
     // }, [])
 
     return (
-        <div>
-            <Tweet/>
-            <PresCandidates/>
+        <div className="game">
+            <Menu />
+            <Tweet />
+            <PresCandidates />
         </div>
     )
 }
