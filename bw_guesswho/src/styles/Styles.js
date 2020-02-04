@@ -36,9 +36,9 @@ export const Input = styled.input`
 `;
 export const Button = styled.button`
 	border-radius: 30px;
-	height: 20%;
-	width: 42%;
-	padding: 15px;
+	height: 10%;
+	width: 30%;
+	padding: 0px;
 	color: white;
 	box-shadow: none;
 	border: none;

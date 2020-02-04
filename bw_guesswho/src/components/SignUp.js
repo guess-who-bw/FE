@@ -36,26 +36,25 @@ function equalTo(ref, msg) {
 yup.addMethod(yup.string, 'equalTo', equalTo);
 
 const validationSchema = yup.object().shape({
-	name: yup.string().required('Enter a name.').min(3, 'You need a longer name.').max(16, 'Name is too long.'),
-	email: yup
-		.string()
-		.required('Enter an email.')
-		.email('Enter an email.')
-		.min(3, 'You need a longer email.')
-		.max(36, 'Your email is too long.'),
-	password: yup
-		.string()
-		.required('Enter a password.')
-		.min(6, 'Password is too short.')
-		.max(16, 'Password exceeds character limit.'),
-	passwordConfirm: yup.string().equalTo(yup.ref('password'), 'Passwords must match.')
+    email: yup
+    .string()
+    // .email('Must be in the form of an email.')
+    .required('Enter an email.')
+    .min(3, 'You need a longer email.')
+    .max(36, 'Email is too long.'),
+    password: yup
+    .string().required('Enter a password.')
+    .min(6, 'Password is too short.')
+    .max(16, 'Password exceeds character limit.')
+    ,
+    // passwordConfirm: yup.string()
+    // .equalTo(yup.ref('password'), 'Passwords must match.')
 });
 
 const initialState = {
-	name: '',
 	email: '',
 	password: '',
-	confirmPassword: ''
+	// confirmPassword: ''
 };
 
 function loginReducer(state, action) {
@@ -72,8 +71,9 @@ export default function SignUp(props) {
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
-			.post('http://localhost:5000/api/login', state)
+			.post('/api/register', state)
 			.then((res) => {
+				console.log('res from signup', res)
 				console.log('TOKEN:', res.data.payload);
 				localStorage.setItem('token', res.data.payload);
 				props.history.push('/home-page');
@@ -81,46 +81,33 @@ export default function SignUp(props) {
 			.catch((err) => console.log(err));
 		document.getElementById('form').reset();
 	};
-
-	return (
-		<Form id="form" onSubmit={handleSubmit(onSubmit)}>
-			<StyledDiv>
-				<Span3 className="backButton">
-					<NavLink to="/">{`<`}</NavLink>
-				</Span3>
-				<Div2>
-					<Span1>Guess</Span1>
-					<Span2>Who?</Span2>
-				</Div2>
-				<H2>Create your account</H2>
-				<StyledDiv2>
-					<Div>
-						<Label htmlFor="name">Name</Label>
-						<Input name="name" type="text" ref={register} />
-					</Div>
-					<Div>
-						<Label htmlFor="email">Email</Label>
-						<Input name="email" type="text" ref={register} />
-					</Div>
-					<Div>
-						<Label htmlFor="name">Password</Label>
-						<Input name="password" type="password" ref={register} />
-					</Div>
-					<Div>
-						<Label htmlFor="passwordConfirm">Confirm Password</Label>
-						<Input name="passwordConfirm" type="password" ref={register} />
-					</Div>
-				</StyledDiv2>
-				<Div>
-					<ErrorMessagesSU errors={errors} />
-				</Div>
-				<Button id="submit" type="submit">
-					Sign Up
-				</Button>
-				<P>
-					Already have an account? <NavLink to="/">Log In</NavLink>
-				</P>
-			</StyledDiv>
-		</Form>
-	);
+    return (
+            <Form id='form' onSubmit={handleSubmit(onSubmit)}>
+                <StyledDiv>
+                    <Span3 className='backButton'><NavLink to='/'>{`<`}</NavLink></Span3>
+                    <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
+                    <H2>Create your account</H2>
+                    <StyledDiv2>
+                        <Div>
+                            <Label htmlFor='email'>Email</Label>
+                            <Input name='email' type='text' ref={register} />
+                        </Div>
+                        <Div>
+                            <Label htmlFor='password'>Password</Label>
+                            <Input name='password' type='password' ref={register} />
+                        </Div>
+                        {/* <Div>
+                            <Label htmlFor='passwordConfirm'>Confirm Password</Label>
+                            <Input name='passwordConfirm' type='password' ref={register} />
+                        </Div> */}
+                    </StyledDiv2>
+                    <Div>
+                        <ErrorMessagesSU errors={errors}/>
+                    </Div>
+                    <Button id='submit' type='submit'>Sign Up</Button>
+                    <P>Already have an account? <NavLink to='/'>Log In</NavLink></P>
+                </StyledDiv>
+        </Form>
+    )
 }
+

@@ -139,6 +139,7 @@ app.post('/api/signup', (req, res) => {
 });
 
 app.get('/api/tweets', authenticator, (req, res) => {
+	console.log('')
 	setTimeout(() => {
 		res.send(presidentialCandidates);
 	}, 1000);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import {NavLink, Route} from 'react-router-dom';
 
@@ -9,10 +9,10 @@ import {Button, LongButton, P, StyledButton, StyledButton2} from '../../styles/S
 
 const HomePage = props => {
 
+
     return(
         <div>
             <Menu />
-            <form>
                 <P>Choose Game Mode</P>
                 <div>
                     <StyledButton selected type='radio' name="singlePlayer">Single Player</StyledButton>
@@ -26,7 +26,6 @@ const HomePage = props => {
                 </div>
 
                 <NavLink to='/game'><Button>Play!</Button></NavLink>
-                </form>
             </div>
 )
 }
