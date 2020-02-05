@@ -172,10 +172,6 @@ export const StyledButton = styled.button`
 		background-color: #aab8c2;
 		color: white;
 	}
-	border-right: none
-	border-left: 1px solid;
-	border-top: none;
-	border-bottom: none;
 `
 export const StyledButton2 = styled.button`
 	width: 50%;
@@ -199,9 +195,45 @@ export const StyledButton2 = styled.button`
 	}
 `
 //Game Styles
-export const Choice = styled.p`
+export const Choice = styled.button`
 	color: white;
-	&:hover {
-		color: grey;
+	width: 50%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	color: white;
+	box-shadow: none;
+	border: none;
+	margin: 2% 0%;
+	background-color: white;
+	color: #1b9bea;
+	:active {
+		background: #1b9bea;
+		color: white;
+	}
+`
+export const ChoiceDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	position: absolute;
+	left: 25%;
+`
+export const Submit = styled.button`
+	color: white;
+	width: 50%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	color: white;
+	box-shadow: none;
+	border: none;
+	margin: 2% 0%;
+	background-color: white;
+	color: #1b9bea;
+	:active {
+		background: #1b9bea;
+		color: white;
 	}
 `
