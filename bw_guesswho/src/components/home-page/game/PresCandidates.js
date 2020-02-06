@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {NavLink} from 'react-router-dom';
 
 import {axiosWithAuth} from '../../../utils/axiosWithAuth';
 import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
