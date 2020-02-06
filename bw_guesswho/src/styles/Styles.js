@@ -6,7 +6,7 @@ export const H1 = styled.h1`
 	font-size: 24px;
 	font-family: 'Nunito', sans-serif;
 	font-weight: 900;
-`;
+`
 export const AppDiv = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -14,6 +14,14 @@ export const AppDiv = styled.div`
 	height: 100vh;
 	max-width: 100vw;
 `;
+export const LogoDiv = styled.div`
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	position: absolute;
+	top: 5%;
+	left: 40%;
+`
 
 // Sign Up and Login styles below
 export const Form = styled.form`
@@ -119,10 +127,8 @@ export const Span3 = styled.span`
 export const Div2 = styled.div`
 display: flex;
 align-items: baseline;
-position: absolute;
-top: 4%;
-left: 40%;
-`;
+width: 100%;
+`
 
 // Menu styling
 export const MenuDiv = styled.div`
