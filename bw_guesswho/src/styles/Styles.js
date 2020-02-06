@@ -100,7 +100,9 @@ export const Span2 = styled.span`
 	font-size: 20px;
 `;
 
-export const StyledP = styled.p`margin: 0;`;
+export const StyledP = styled.p`
+    margin: 0;
+`;
 
 export const Img = styled.img`
 	height: 40px;
@@ -120,6 +122,7 @@ display: flex;
 align-items: baseline;
 position: absolute;
 top: 5%;
+left: 36%;
 `;
 
 // Menu styling
@@ -236,4 +239,39 @@ export const Submit = styled.button`
 		background: #1b9bea;
 		color: white;
 	}
+`
+export const ScoreP = styled.p`
+    color: white;
+    font-size: 2rem;
+`
+export const StyledTweet = styled.p`
+    position: relative;
+    top: 0%;
+    color: white;
+    text-align: left;
+    margin: 1em;
+    border: 1px solid white;
+    box-shadow: 5px 5px rgba(0, 0, /0, 25%);
+`
+export const ImageDiv = styled.div`
+    position: absolute;
+    top: 20%;
+    display: flex;
+    justify-content: space-evenly;
+`
+export const PresImg = styled.img`
+    width: 20%;
+    border-radius: 30px;
+`
+export const LevelP = styled.p`
+	color: white;
+	font-size: 2rem;
+	margin-left: 0%;
+`
+export const InfoDiv = styled.div`
+	position: absolute;
+	top: 20%;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
 `

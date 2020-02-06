@@ -30,12 +30,13 @@ function loginReducer(state, action) {
 	return state;
 }
 
-export default function Login(props) {
+function Login(props) {
 	const { register, handleSubmit, errors } = useForm({ validationSchema: validationSchema });
 	const [ state, dispatch ] = useReducer(loginReducer, initialState);
 
 	// email: 1234@gmail.com    password: 1234
 	const onSubmit = (data) => {
+		console.log('Data from Login\'n onSubmit', data);
 		dispatch((state.email = data.email), (state.password = data.password));
 		// console.log('state', state, 'data', data);
 		// e.preventDefault();
@@ -80,3 +81,5 @@ export default function Login(props) {
 		</Form>
 	);
 }
+
+export default Login;

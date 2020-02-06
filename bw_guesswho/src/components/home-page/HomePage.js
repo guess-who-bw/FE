@@ -5,7 +5,7 @@ import {NavLink, Route} from 'react-router-dom';
 import Menu from '../Nav/Menu';
 import Game from './game/Game';
 import PrivateRoute from '../PrivateRoute';
-import {Button, LongButton, P, StyledButton, StyledButton2} from '../../styles/Styles';
+import {Button, LongButton, P, StyledButton, StyledButton2, Div2, Span1, Span2} from '../../styles/Styles';
 
 const HomePage = props => {
 
@@ -13,6 +13,7 @@ const HomePage = props => {
     return(
         <div>
             <Menu />
+            <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
                 <P>Choose Game Mode</P>
                 <div>
                     <StyledButton selected type='radio' name="singlePlayer">Single Player</StyledButton>
