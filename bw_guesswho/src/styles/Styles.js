@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-/* App.js Styling */
+// App.js Styling 
 export const H1 = styled.h1`
 	color: white;
 	font-size: 24px;
@@ -15,7 +15,7 @@ export const AppDiv = styled.div`
 	max-width: 100vw;
 `;
 
-/* Sign Up and Login styles below */
+// Sign Up and Login styles below
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
@@ -211,7 +211,7 @@ export const Choice = styled.button`
 	width: 100%;
 	border-radius: 30px;
 	height: 20%;
-	padding: 5% 15%;
+	padding: 5% 25%;
 	color: white;
 	box-shadow: none;
 	border: none;
@@ -229,10 +229,10 @@ export const Choice = styled.button`
 export const ChoiceDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 50%;
+	width: 60%;
 	justify-content: center;
 	position: absolute;
-	left: 25%;
+	left: 20%;
 `
 export const Submit = styled.button`
 	color: white;
