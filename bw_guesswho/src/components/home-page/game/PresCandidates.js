@@ -59,7 +59,7 @@ const PresCandidates = (props) => {
                             (props.count===29)?
                             (props.setCount(0)):
                             props.setCount(props.count + 1)
-                            }}>{handle1}</Choice>
+                            }}>@{handle1}</Choice>
                             
                     <Choice className='choice' id={id2} onClick={
                         e => {
@@ -70,7 +70,7 @@ const PresCandidates = (props) => {
                                 props.count===29)?(
                                     props.setCount(0)):
                                     props.setCount(props.count + 1)}
-                                    }>{handle2}</Choice>
+                                    }>@{handle2}</Choice>
                     <Choice className='choice' id={id3} onClick={
                         e => {
                             e.preventDefault(); 
@@ -80,7 +80,7 @@ const PresCandidates = (props) => {
                                 props.count===29)?(
                                     props.setCount(0)):
                                     props.setCount(props.count + 1)}
-                                    }>{handle3}</Choice>
+                                    }>@{handle3}</Choice>
                 </ChoiceDiv>
             <InfoDiv>
                 <ScoreP>Score: {props.score}</ScoreP>
