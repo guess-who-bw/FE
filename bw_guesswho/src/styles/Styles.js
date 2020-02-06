@@ -207,11 +207,11 @@ export const StyledButton2 = styled.button`
 //Game Styles
 export const Choice = styled.button`
 	color: white;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	width: 100%;
 	border-radius: 30px;
 	height: 20%;
-	padding: 15px;
+	padding: 5% 15%;
 	color: white;
 	box-shadow: none;
 	border: none;
