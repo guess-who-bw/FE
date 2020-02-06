@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import AccountForm from './AccountForm';
 
-import { connect } from 'react-redux';
-import { editUserInfo } from '../actions';
 import Menu from '../Nav/Menu'; 
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
 import {AccountDiv} from '../../styles/Styles';

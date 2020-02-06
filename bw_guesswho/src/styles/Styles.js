@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-/* App.js Styling */
+// App.js Styling 
 export const H1 = styled.h1`
 	color: white;
 	font-size: 24px;
@@ -11,12 +11,11 @@ export const AppDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	height: 100vh;
 	max-width: 100vw;
 `;
 
-/* Sign Up and Login styles below */
+// Sign Up and Login styles below
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
@@ -121,8 +120,8 @@ export const Div2 = styled.div`
 display: flex;
 align-items: baseline;
 position: absolute;
-top: 5%;
-left: 36%;
+top: 4%;
+left: 40%;
 `;
 
 // Menu styling
@@ -154,11 +153,20 @@ export const LongButton = styled.button`
 	position: relative;
 	margin: 1% 0;
 	background-color: white;
-	color: #1b9bea;
-	:disabled {
-		background-color: #aab8c2;
-		color: white;
-	}
+	background-color: #aab8c2;
+	color: white;
+`
+export const PresButton = styled.button`
+	width: 55%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	margin: 1% 0;
+	background-color: white;
+	color: #1B9BEA;
 `
 export const StyledButton = styled.button`
 	width: 50%;
@@ -193,18 +201,17 @@ export const StyledButton2 = styled.button`
 	border-left: none;
 	border-top: none;
 	border-bottom: none;
-	:disabled {
-		background-color: #aab8c2;
-		color: white;
-	}
+	background-color: #aab8c2;
+	color: white;
 `
 //Game Styles
 export const Choice = styled.button`
 	color: white;
-	width: 50%;
+	font-size: 1.1rem;
+	width: 100%;
 	border-radius: 30px;
 	height: 20%;
-	padding: 15px;
+	padding: 5% 15%;
 	color: white;
 	box-shadow: none;
 	border: none;
@@ -215,11 +222,14 @@ export const Choice = styled.button`
 		background: #1b9bea;
 		color: white;
 	}
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 `
 export const ChoiceDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 50%;
 	justify-content: center;
 	position: absolute;
 	left: 25%;
@@ -255,13 +265,18 @@ export const StyledTweet = styled.p`
 	border: 2px solid white;
 	padding: 2%;
 `
+export const TweetDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+`
 export const ImageDiv = styled.div`
     position: absolute;
     top: 20%;
     display: flex;
     justify-content: space-evenly;
 `
-export const PresImg = styled.img`
+export const Cand = styled.img`
     width: 20%;
     border-radius: 30px;
 `
@@ -277,6 +292,17 @@ export const InfoDiv = styled.div`
 	justify-content: space-evenly;
 	width: 100%;
 	height: 10%;
+`
+export const GameDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+`
+export const PresCandImg = styled.img`
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
 `
 //Setting Styles
 export const DeleteButton = styled.button`

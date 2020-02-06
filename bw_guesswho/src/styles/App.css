@@ -30,3 +30,15 @@ button {
     color: #1B9BEA;
     text-decoration: none;
 }
+.checkIcon {
+    color: #0dcc0d;
+    font-size: 1.3rem;
+}
+.xIcon {
+    color: red;
+    font-size: 1.3rem;
+    display: none;
+}
+.hidden {
+    display: none;
+}

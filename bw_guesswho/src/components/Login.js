@@ -59,10 +59,6 @@ function Login(props) {
 	return (
 		<Form id='form' onSubmit={handleSubmit(onSubmit)}>
 			<StyledDiv>
-				<Div2>
-					<Span1>Guess</Span1>
-					<Span2>Who?</Span2>
-				</Div2>
 				<H2>Sign In</H2>
 				<StyledDiv2>
 					<Div>

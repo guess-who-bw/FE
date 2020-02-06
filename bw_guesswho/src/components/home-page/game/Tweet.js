@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { axiosWithAuth } from '../../../utils/axiosWithAuth';
 import PresCandidates from './PresCandidates';
-import {StyledTweet} from '../../../styles/Styles';
+import {StyledTweet, TweetDiv} from '../../../styles/Styles';
 
 const Tweets = props => {
     const [tweet, setTweet] = useState(); 
@@ -22,10 +22,10 @@ const Tweets = props => {
     }, [count, tweet])
 
     return (
-        <>
+        <TweetDiv>
         <StyledTweet>{tweet}</StyledTweet>
         <PresCandidates score={score} setScore={setScore} setCount={setCount} count={count} />
-        </>
+        </TweetDiv>
     );
 }
 

@@ -2,16 +2,15 @@ import React, { useEffect } from 'react';
 
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
-import {Div2, Span1, Span2} from '../../../styles/Styles';
+import {Div2, Span1, Span2, GameDiv} from '../../../styles/Styles';
 
 const Game = props => {
     
     return (
-        <div className="game">
-            <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
+        <GameDiv className="game">
             <Menu />
             <Tweet />
-        </div>
+        </GameDiv>
     )
 }
 
