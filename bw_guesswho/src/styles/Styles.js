@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-/* App.js Styling */
+// App.js Styling 
 export const H1 = styled.h1`
 	color: white;
 	font-size: 24px;
@@ -15,7 +15,7 @@ export const AppDiv = styled.div`
 	max-width: 100vw;
 `;
 
-/* Sign Up and Login styles below */
+// Sign Up and Login styles below
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;

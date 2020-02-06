@@ -2,6 +2,7 @@
 
 **Deployed website**:
 [GuessWho](https://guess-who-build-week-2.netlify.com/)
+The site is mobile only.
 
 ## Description
 
