@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { axiosWithAuth } from './utils/axiosWithAuth';
-
 
 import './styles/App.css';
 import { AppDiv, Div2, Span1, Span2 } from './styles/Styles';

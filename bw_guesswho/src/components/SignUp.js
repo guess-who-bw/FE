@@ -93,10 +93,6 @@ export default function SignUp(props) {
                             <Label htmlFor='password'>Password</Label>
                             <Input name='password' type='password' ref={register} />
                         </Div>
-                        {/* <Div>
-                            <Label htmlFor='passwordConfirm'>Confirm Password</Label>
-                            <Input name='passwordConfirm' type='password' ref={register} />
-                        </Div> */}
                     </StyledDiv2>
                     <Div>
                         <ErrorMessagesSU errors={errors}/>
