@@ -38,7 +38,7 @@ yup.addMethod(yup.string, 'equalTo', equalTo);
 const validationSchema = yup.object().shape({
     email: yup
     .string()
-    // .email('Must be in the form of an email.')
+    .email('Must be in the form of an email.')
     .required('Enter an email.')
     .min(3, 'You need a longer email.')
     .max(36, 'Email is too long.'),
@@ -46,9 +46,6 @@ const validationSchema = yup.object().shape({
     .string().required('Enter a password.')
     .min(6, 'Password is too short.')
     .max(16, 'Password exceeds character limit.')
-    ,
-    // passwordConfirm: yup.string()
-    // .equalTo(yup.ref('password'), 'Passwords must match.')
 });
 
 const initialState = {
@@ -74,8 +71,9 @@ export default function SignUp(props) {
 			.post('/api/register', state)
 			.then((res) => {
 				console.log('res from signup', res)
-				console.log('TOKEN:', res.data.payload);
-				localStorage.setItem('token', res.data.payload);
+				console.log('TOKEN:', res.data.token);
+				localStorage.setItem('token', res.data.token);
+				localStorage.setItem('id', res.data.id);
 				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));

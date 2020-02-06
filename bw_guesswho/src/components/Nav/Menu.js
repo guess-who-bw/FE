@@ -10,6 +10,7 @@ export default function Menu() {
         <div><NavLink to='/account'> Account </NavLink></div>
         <div><NavLink to='/settings'> Settings </NavLink></div>
         <div><NavLink to='/logout'> Log Out </NavLink></div>
+        <div><NavLink to='/home-page' onClick={()=>localStorage.clear()}>Home</NavLink></div>
     </div>
     return (
         <MenuDiv className='menudiv'>

@@ -129,7 +129,8 @@ left: 36%;
 export const MenuDiv = styled.div`
     position: fixed;
     left: 85%;
-    top: 10%;
+	top: 10%;
+	z-index: 2;
 `
 export const ShowingDiv = styled.div`
     display: flex;
@@ -250,8 +251,9 @@ export const StyledTweet = styled.p`
     color: white;
     text-align: left;
     margin: 1em;
-    border: 1px solid white;
-    box-shadow: 5px 5px rgba(0, 0, /0, 25%);
+	box-shadow: 5px 5px rgba(0, 0, 0, 25%);
+	border: 2px solid white;
+	padding: 2%;
 `
 export const ImageDiv = styled.div`
     position: absolute;
@@ -270,8 +272,39 @@ export const LevelP = styled.p`
 `
 export const InfoDiv = styled.div`
 	position: absolute;
-	top: 20%;
+	top: 10%;
 	display: flex;
 	justify-content: space-evenly;
 	width: 100%;
+	height: 10%;
+`
+//Setting Styles
+export const DeleteButton = styled.button`
+	padding: 10%;
+	color: white;
+	font-size: 3rem;
+	background-color: red;
+	border: none;
+	border-radius: 15px;
+	:active {
+		color: red;
+		background-color: white;
+	}
+`
+export const DeleteDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+`
+export const DeleteP = styled.p`
+	color: white;
+	font-size: 1.5rem;
+`
+//Account Styles
+export const AccountDiv = styled.div`
+	color: white;
+	border: 2px solid white;
+	box-shadow: 5px 5px rgba(0, 0, 0, 25%);
+	padding: 2%;
 `

@@ -1,35 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AccountForm from './AccountForm';
 
 import { connect } from 'react-redux';
 import { editUserInfo } from '../actions';
 import Menu from '../Nav/Menu'; 
+import {axiosWithAuth} from '../../utils/axiosWithAuth';
+import {AccountDiv} from '../../styles/Styles';
 
 function Account(props) {
-
+const id = localStorage.id
+const [email, setEmail] = useState()
+const [points, setPoints] = useState()
+useEffect( () => {
+    axiosWithAuth()
+        .get(`/api/users/${id}`)
+        .then(res => {
+            setEmail(res.data.email)
+            setPoints(res.data.points)
+    })
+        .catch(err => console.log(err))
+},[])
     return (
-        <div>
-            <Menu />
-            {!props.isEditingOnProps ? (
-            <div>
-                <h1>Email: {props.emailOnProps}</h1>
-                <h2>Password: {props.passwordOnProps}</h2>
-                <h1>Score</h1>
-                <h1>Wrong Answers</h1>
-                <button onClick={props.editUserInfo}>Edit</button>
-            </div>
-            )
-            : <AccountForm />}
-        </div>
+            <AccountDiv>
+                <Menu />
+                <h1>Email: {email}</h1>
+                <h1>Score: {points}</h1>
+            </AccountDiv>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        emailOnProps: state.email,
-        passwordOnProps: state.password,
-        isEditingOnProps: state.isEditing
-      };
-}
-
-export default connect(mapStateToProps, {editUserInfo})(Account);
+export default Account
