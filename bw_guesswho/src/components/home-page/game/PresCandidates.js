@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from 'react';
-// import { library, icon } from '@fortawesome/fontawesome-svg-core'
-// import { fa-check } from '@fortawesome/free-solid-svg-icons'
-
-// library.add(fa-check)
-
-// const camera = icon({ prefix: 'fas', iconName: 'camera' })
 
 import {axiosWithAuth} from '../../../utils/axiosWithAuth';
-import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
+import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP, PresCandImg} from '../../../styles/Styles';
 
 const PresCandidates = (props) => {
     const id = localStorage.id
@@ -29,6 +23,9 @@ const PresCandidates = (props) => {
     const [id2, setId2] = useState();
     const [id3, setId3] = useState();
     const [wrongCount, setWrongCount] = useState(0);
+    const [image, setImage] = useState();
+    const [image2, setImage2] = useState();
+    const [image3, setImage3] = useState();
     
     useEffect(() => {
         axiosWithAuth()
@@ -41,6 +38,9 @@ const PresCandidates = (props) => {
             setHandle3(res.data.rounds[props.count].options[2].handle)
             setId3(res.data.rounds[props.count].options[2].id)
             setCorrectAns(res.data.rounds[props.count].correct_option_id)
+            setImage(res.data.rounds[props.count].options[0].picture_url)
+            setImage2(res.data.rounds[props.count].options[1].picture_url)
+            setImage3(res.data.rounds[props.count].options[2].picture_url)
         })
         .catch(err => {
             console.log(err)       
@@ -57,10 +57,10 @@ const PresCandidates = (props) => {
                             ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1); 
                             (props.count===29)?
-                            (props.setCount(0)):
-                            props.setCount(props.count + 1)
-                            }}>@{handle1}</Choice>
-                            
+                      (props.setCount(0)):
+                            (props.setCount(props.count + 1))
+                            }}><PresCandImg src={image}/>@{handle1}
+                    </Choice>
                     <Choice className='choice' id={id2} onClick={
                         e => {
                             e.preventDefault(); 
@@ -69,8 +69,9 @@ const PresCandidates = (props) => {
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
-                                    props.setCount(props.count + 1)}
-                                    }>@{handle2}</Choice>
+                                    (props.setCount(props.count + 1))}
+                                    }><PresCandImg src={image2}/>@{handle2}
+                    </Choice>
                     <Choice className='choice' id={id3} onClick={
                         e => {
                             e.preventDefault(); 
@@ -79,8 +80,9 @@ const PresCandidates = (props) => {
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
-                                    props.setCount(props.count + 1)}
-                                    }>@{handle3}</Choice>
+                                    (props.setCount(props.count + 1))}
+                                }><PresCandImg src={image3}/>@{handle3}
+                    </Choice>
                 </ChoiceDiv>
             <InfoDiv>
                 <ScoreP>Score: {props.score}</ScoreP>

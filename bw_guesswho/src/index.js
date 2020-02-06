@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-// import '../node_modules/font-awesome/css/font-awesome.min.css';
-// import { library, icon } from '@fortawesome/fontawesome-svg-core'
-// import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
-// library.add(faCamera)
 
-// const camera = icon({ prefix: 'fas', iconName: 'camera' })
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom';
