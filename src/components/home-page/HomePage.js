@@ -13,7 +13,6 @@ const HomePage = props => {
     return(
         <div>
             <Menu />
-            <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
                 <P>Choose Game Mode</P>
                 <div>
                     <StyledButton selected type='radio' name="singlePlayer">Single Player</StyledButton>

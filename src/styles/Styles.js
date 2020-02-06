@@ -17,7 +17,7 @@ export const AppDiv = styled.div`
 export const LogoDiv = styled.div`
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	width: 40%;
 	position: absolute;
 	top: 5%;
 	left: 40%;
