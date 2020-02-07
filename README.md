@@ -1,176 +1,68 @@
-# Front-End-GuessWho
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**Deployed website**:
-[GuessWho](https://guess-who-build-week-2.netlify.com/)
-The site is mobile only.
+## Available Scripts
 
-## Description
+In the project directory, you can run:
 
-GuessWho is a mobile game that presents the player with a tweet and three possible 2020 presidential candidates whom might of tweeted that tweet. Categories of celeberities would be a future feature that would be added. The user is to match the person with his/her tweet. Points will be awarded for correct guesses; in future editions, after set levels of points are reached the user can unlock more people. 
+### `yarn start`
 
-## Getting Started
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To begin using the App as a client end user, register as a user on the registration page. Registration must include valid email address and password between 4 and 20 characters.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-To login to the App, follow the link and login with the correct username and password.
+### `yarn test`
 
-The first page rendered after the login is the home page. On home page, user will be prompted to choose single player and the category of tweeters.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Once you push play, you will be given a tweet and underneath, three possible answers. User then selects the option they believe to be correct. If the answer is correct, their score will increment by one point. Every ten points a user scores, the level increments.
+### `yarn build`
 
-When logged in, the user has access to a menu in the top right of the screen. The menu includes options:
-1. Home Page - user can select game mode and start playing
-2. Account - user can track their points and level
-3. Settings - user can delete their account
-4. Logout - user can logout
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Prerequisites
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-All of the below dependencies can be installed using:
-`yarn install` or `npm install`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Start development by creating a react app using:
-`yarn start` or `npm start`
+### `yarn eject`
 
-## Dependencies
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-This project was created using yarn and designed for react client side. Other dependencies include:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
-"@fortawesome/fontawesome-free": "^5.12.1",
-"@fortawesome/fontawesome-svg-core": "^1.2.27",
-"@fortawesome/free-brands-svg-icons": "^5.12.1",
-"@fortawesome/free-solid-svg-icons": "^5.12.1",
-"@fortawesome/react-fontawesome": "^0.1.8",
-"axios": "^0.19.0",
-"font-awesome": "^4.7.0",
-"react": "^16.10.1",
-"react-dom": "^16.10.1",
-"react-hook-form": "^4.8.0",
-"react-redux": "^7.1.3",
-"react-router-dom": "^5.1.2",
-"react-scripts": "^3.3.1",
-"redux": "^4.0.5",
-"styled-components": "^5.0.0",
-"yup": "^0.28.1"
-```
- ## Demo Login
- 
-The "users" login looks like this:
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```
-"email": "testing@gmail.com",
-"password": "123456",
-```
-# BE
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## DATA STRUCTURE
+## Learn More
 
-### Users
-POST to /api/register
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-expects:
-```
-{
-    email: "email",
-    password: "password"
-}
-```
-returns:
-```
-{
-    id: id, 
-    token: "token",
-    points: points
-}
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-POST to /api/login
-expects: 
-```
-{
-    email: "email",
-    password: "password"
-}
-```
-returns:
-```
-{
-    id: id, 
-    token: "token",
-    points: points
-}
-```
+### Code Splitting
 
-GET to /api/users/:id
-returns:
-```
-{
-    id: id
-    email: "email",
-    password: "password",
-    points: points
-}
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-GET to /api/tweets
-returns:
-```
-rounds data structure
-```
+### Analyzing the Bundle Size
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-PUT to /api/users/:id
-expects: 
-```
-{
-    points: points,
-}
-```
+### Making a Progressive Web App
 
-returns:
-```
-{
- "message": "User updated."
-}
-```
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
+### Advanced Configuration
 
-DELETE to /api/users/:id
-returns:
-```
-{
- "message": "User deleted."
-}
-```
-## Authors and acknowledgment
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-**UI Engineers**:
-Michael Bailar
-Edward Blanciak
+### Deployment
 
-**Front End Engineers**:
-Damon Bogich
-Aaron Janovitch
-Thomas Shotts Jr.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-**Backend Engineer**:
-Phil MacEachron
-Nasra Aden
+### `yarn build` fails to minify
 
-**UX Designer**
-Jessica Morrison
-
-**Project Lead**
-Jojo Zhang
-
-**Full Repo**:
-https://github.com/guess-who-bw
-
-## Project status
-
-This project was completed for a Lambda School build week February 2020. There may be updates to the application periodically
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
