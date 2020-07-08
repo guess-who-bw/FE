@@ -9,6 +9,7 @@ import {
 	StyledDiv2,
 	H2,
 	P,
+	P2,
 	Span1,
 	Span2,
 	Span3,
@@ -99,6 +100,7 @@ export default function SignUp(props) {
                     </Div>
                     <Button id='submit' type='submit'>Sign Up</Button>
                     <P>Already have an account? <NavLink to='/'>Log In</NavLink></P>
+                    <P2>Don't want to create an account? <NavLink to='/game'>Login as a guest</NavLink></P2>
                 </StyledDiv>
         </Form>
     )

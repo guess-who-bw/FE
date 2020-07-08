@@ -30,7 +30,7 @@ export const Input = styled.input`
 	border-radius: 5px;
 	margin: 2% 0;
 	padding: 0;
-	postition: absolute;
+	/* position: absolute; */
 	left: 90%;
 `;
 export const Button = styled.button`
@@ -86,6 +86,11 @@ export const P = styled.p`
 	color: white;
 	font-size: 10px;
 	margin-top: 20%;
+`;
+export const P2 = styled.p`
+	color: white;
+	font-size: 10px;
+	/* margin-top: 20%; */
 `;
 export const Span1 = styled.span`
 	font-family: 'Londrina Outline', cursive;
