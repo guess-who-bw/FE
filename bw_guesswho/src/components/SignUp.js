@@ -100,7 +100,21 @@ export default function SignUp(props) {
                     </Div>
                     <Button id='submit' type='submit'>Sign Up</Button>
                     <P>Already have an account? <NavLink to='/'>Log In</NavLink></P>
-                    <P2>Don't want to create an account? <NavLink to='/game'>Login as a guest</NavLink></P2>
+                    <P2>Don't want to create an account? <NavLink onClick={
+                        () => {
+                            localStorage.setItem('guestaccount', 'active')
+                            const randomuser = Math.random() * 1000000
+                            axiosWithAuth()
+                                .post('/api/register', {'email': `guestaccount@${randomuser}test.com`, 'password': 'guestaccount'})
+                                .then((res) => {
+                                    console.log('res from signup', res.data)
+                                    localStorage.setItem('token', res.data.token)
+                                    console.log(res.data.token)
+                                    localStorage.setItem('id', res.data.id);                                    
+                                })
+                                .catch((err) => console.log(err))
+                        }} 
+                        to='/game'>Login as a guest</NavLink></P2>
                 </StyledDiv>
         </Form>
     )

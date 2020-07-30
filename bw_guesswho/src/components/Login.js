@@ -43,8 +43,8 @@ function Login(props) {
 		axiosWithAuth()
 			.post('/api/login', state)
 			.then((res) => {
-				console.log('res from Login', res);
-				console.log('TOKEN:', res.data.token);
+				// console.log('res from Login', res);
+				// console.log('TOKEN:', res.data.token);
 				localStorage.setItem('token', res.data.token);
 				localStorage.setItem('id', res.data.id);
 				props.history.push('/home-page');

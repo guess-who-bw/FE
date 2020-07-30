@@ -10,15 +10,23 @@ const Tweets = props => {
     const [score, setScore] = useState(localStorage.points);
     const getPoints = () => axiosWithAuth().get(`/api/users/${localStorage.id}`).then(res=>setScore(res.data.points))
     useEffect(() => {
+        if (typeof(localStorage.guestaccount) !== 'undefined'){
+            window.onunload = e => {
+                axiosWithAuth()
+                    .delete(`/api/users/${localStorage.id}`)
+                localStorage.clear()
+            }
+        }
         axiosWithAuth()
-        .get('/api/tweets')
-        .then(res => {
-            setTweet(res.data.rounds[count].tweet.text);
-            getPoints();
-        })
-        .catch(err => {
-            console.log(err)       
-        })
+            .get('/api/tweets')
+            .then(res => {
+                setTweet(res.data.rounds[count].tweet.text);
+                getPoints();
+                console.log(score)
+            })
+            .catch(err => {
+                console.log(err)       
+            })
     }, [count, tweet])
 
     return (
