@@ -10,10 +10,7 @@ import {
 	H2,
 	P,
 	P2,
-	Span1,
-	Span2,
 	Span3,
-	Div2
 } from '../styles/Styles';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -24,7 +21,8 @@ import ErrorMessagesSU from './ErrorMessagesSU';
 function equalTo(ref, msg) {
 	return yup.mixed().test({
 		name: 'equalTo',
-		exclusive: false,
+        exclusive: false,
+        /* eslint-disable-next-line*/
 		message: msg || '${path} must be the same as ${reference}',
 		params: {
 			reference: ref.path
@@ -66,15 +64,13 @@ export default function SignUp(props) {
 	// email: 1234@gmail.com    password: 1234
 	const onSubmit = (data) => {
 		dispatch((state.email = data.email), (state.password = data.password));
-		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
 			.post('/api/register', state)
 			.then((res) => {
-				console.log('res from signup', res)
-				console.log('TOKEN:', res.data.token);
 				localStorage.setItem('token', res.data.token);
 				localStorage.setItem('id', res.data.id);
+                localStorage.setItem('points', res.data.points)
 				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
@@ -107,10 +103,9 @@ export default function SignUp(props) {
                             axiosWithAuth()
                                 .post('/api/register', {'email': `guestaccount@${randomuser}test.com`, 'password': 'guestaccount'})
                                 .then((res) => {
-                                    console.log('res from signup', res.data)
                                     localStorage.setItem('token', res.data.token)
-                                    console.log(res.data.token)
                                     localStorage.setItem('id', res.data.id);                                    
+                                    localStorage.setItem('points', res.data.points)
                                 })
                                 .catch((err) => console.log(err))
                         }} 

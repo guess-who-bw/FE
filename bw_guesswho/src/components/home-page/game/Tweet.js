@@ -14,7 +14,6 @@ const Tweets = props => {
             window.onunload = e => {
                 axiosWithAuth()
                     .delete(`/api/users/${localStorage.id}`)
-                localStorage.clear()
             }
         }
         axiosWithAuth()
@@ -22,12 +21,11 @@ const Tweets = props => {
             .then(res => {
                 setTweet(res.data.rounds[count].tweet.text);
                 getPoints();
-                console.log(score)
             })
             .catch(err => {
                 console.log(err)       
             })
-    }, [count, tweet])
+    }, [count, tweet, score])
 
     return (
         <TweetDiv>

@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 
 import {MenuDiv, ShowingDiv} from '../../styles/Styles';
 
-const handleClick = () => console.log(document.getElementById('menubuttons').classList.toggle('hidden'));
+const handleClick = () => document.getElementById('menubuttons').classList.toggle('hidden');
 export default function Menu() {
     const MenuButtons = 
     <div>
@@ -14,7 +14,7 @@ export default function Menu() {
     </div>
     return (
         <MenuDiv className='menudiv'>
-            <img src='https://i.imgur.com/4QBK6hQ.png' onClick={handleClick}></img>
+            <img src='https://i.imgur.com/4QBK6hQ.png' alt="hamburger menu logo" onClick={handleClick}></img>
             <ShowingDiv id='menubuttons' className='hidden'>{MenuButtons}</ShowingDiv>
         </MenuDiv>
     )

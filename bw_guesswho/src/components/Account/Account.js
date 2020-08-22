@@ -16,7 +16,7 @@ useEffect( () => {
             setPoints(res.data.points)
     })
         .catch(err => console.log(err))
-},[])
+},[id])
     return (
             <AccountDiv>
                 <Menu />

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
-import {Div2, Span1, Span2, GameDiv} from '../../../styles/Styles';
+import {GameDiv} from '../../../styles/Styles';
 
 const Game = props => {
     
